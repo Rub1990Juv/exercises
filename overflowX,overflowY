@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.game {
+    width: 500px;
+    height: 300px;
+
+    overflow-x: scroll;
+    overflow-y: scroll;
+
+    border: 3px solid;
+}
+
+.world {
+    width: 1800px;
+    height: 1200px;
+    background: linear-gradient(green, blue);
+}
+</style>
+</head>
+<body>
+
+<div class="game">
+    <div class="world"></div>
+</div>
+</body>
+</html>
+
+
