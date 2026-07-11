@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Combinator Example</title>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Article Card Styling */
+        .blog-post {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            max-width: 600px;
+            border-left: 5px solid #0070f3;
+        }
+
+        h2 {
+            color: #111;
+            margin-top: 0;
+            font-size: 28px;
+        }
+
+        /* 1. Standard paragraphs selector */
+        .blog-post p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* 2. SPECIFIC COMBINATOR SELECTOR */
+        /* Targets ONLY the paragraph that comes immediately after an h2 */
+        .blog-post h2 + p {
+            font-size: 20px;
+            font-weight: 500;
+            color: #0070f3; /* Accent Blue */
+            line-height: 1.5;
+            border-bottom: 1px dashed #e1e8ed;
+            padding-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <article class="blog-post">
+        <h2>How CSS Combinators Work</h2>
+        
+        <!-- This paragraph will be BIG and BLUE because it is the adjacent sibling of h2 -->
+        <p>This paragraph is the article introduction (lead text). It automatically gets a larger font size and a unique color because it comes immediately after the heading element.</p>
+
+        <!-- These paragraphs will be normal, as they do not follow the h2 directly -->
+        <p>This is the main body text of the article. It falls back to the standard paragraph styling, just like any other ordinary paragraph further down the page.</p>
+        
+        <p>Another regular paragraph here. As you can see, the "h2 + p" rule has absolutely no effect on this text because it is not an immediate neighbor of the heading.</p>
+    </article>
+
+</body>
+</html>
