@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pseudo-class Demo</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#eef2f7;
+    padding:40px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+section{
+    background:#fff;
+    padding:25px;
+    margin:30px auto;
+    max-width:700px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+h2{
+    margin-bottom:20px;
+}
+
+/* ---------------- Hover ---------------- */
+
+.btn{
+    padding:15px 35px;
+    background:#2196f3;
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.4s;
+}
+
+.btn:hover{
+    transform:translateY(-8px) scale(1.08);
+    box-shadow:0 15px 30px rgba(33,150,243,.5);
+}
+
+/* ---------------- Focus ---------------- */
+
+input{
+    width:100%;
+    padding:15px;
+    border:2px solid gray;
+    border-radius:8px;
+    transition:.3s;
+}
+
+input:focus{
+    outline:none;
+    border-color:#00c853;
+    box-shadow:0 0 15px #00c853;
+}
+
+/* ---------------- Checked ---------------- */
+
+#check{
+    display:none;
+}
+
+label{
+    display:inline-block;
+    padding:12px 25px;
+    background:#555;
+    color:#fff;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.card{
+    width:220px;
+    height:120px;
+    background:#ccc;
+    margin-top:20px;
+    border-radius:10px;
+    transition:.5s;
+}
+
+#check:checked~.card{
+    background:#4caf50;
+    transform:rotate(5deg) scale(1.1);
+}
+
+/* ---------------- nth-child ---------------- */
+
+.list li{
+    list-style:none;
+    margin:6px 0;
+    padding:12px;
+    color:white;
+}
+
+.list li:nth-child(1){background:#f44336;}
+.list li:nth-child(2){background:#ff9800;}
+.list li:nth-child(3){background:#4caf50;}
+.list li:nth-child(4){background:#2196f3;}
+.list li:nth-child(5){background:#9c27b0;}
+
+/* ---------------- not ---------------- */
+
+.boxes{
+    display:flex;
+    gap:10px;
+}
+
+.box{
+    width:80px;
+    height:80px;
+    background:#2196f3;
+}
+
+.box:not(.active){
+    opacity:.25;
+}
+
+/* ---------------- target ---------------- */
+
+.popup{
+    width:320px;
+    padding:20px;
+    background:white;
+    border:2px solid #000;
+    border-radius:10px;
+
+    position:fixed;
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%) scale(0);
+
+    transition:.4s;
+}
+
+.popup:target{
+    transform:translate(-50%,-50%) scale(1);
+}
+
+/* ---------------- valid invalid ---------------- */
+
+.email:valid{
+    border-color:green;
+}
+
+.email:invalid{
+    border-color:red;
+}
+
+/* ---------------- Domino ---------------- */
+
+.domino{
+    display:flex;
+    gap:10px;
+}
+
+.domino div{
+    width:60px;
+    height:60px;
+    background:#03a9f4;
+    transition:.3s;
+}
+
+.domino:hover div:nth-child(1){
+    transform:translateY(-15px);
+}
+
+.domino:hover div:nth-child(2){
+    transform:translateY(-30px);
+}
+
+.domino:hover div:nth-child(3){
+    transform:translateY(-45px);
+}
+
+.domino:hover div:nth-child(4){
+    transform:translateY(-30px);
+}
+
+.domino:hover div:nth-child(5){
+    transform:translateY(-15px);
+}
+
+/* ---------------- first last ---------------- */
+
+.demo li{
+    padding:10px;
+    margin:4px 0;
+    list-style:none;
+    background:#ddd;
+}
+
+.demo li:first-child{
+    background:#4caf50;
+}
+
+.demo li:last-child{
+    background:#f44336;
+}
+
+.demo li:nth-child(odd){
+    color:blue;
+}
+
+.demo li:nth-child(even){
+    color:orange;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>CSS Pseudo-class Demo</h1>
+
+<section>
+
+<h2>:hover</h2>
+
+<button class="btn">Hover Me</button>
+
+</section>
+
+<section>
+
+<h2>:focus</h2>
+
+<input type="text" placeholder="Գրիր այստեղ">
+
+</section>
+
+<section>
+
+<h2>:checked</h2>
+
+<input type="checkbox" id="check">
+
+<label for="check">Միացնել</label>
+
+<div class="card"></div>
+
+</section>
+
+<section>
+
+<h2>:nth-child()</h2>
+
+<ul class="list">
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+<li>PHP</li>
+<li>SQL</li>
+</ul>
+
+</section>
+
+<section>
+
+<h2>:not()</h2>
+
+<div class="boxes">
+
+<div class="box"></div>
+
+<div class="box active"></div>
+
+<div class="box"></div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>:target</h2>
+
+<a href="#popup">Բացել Popup</a>
+
+<div id="popup" class="popup">
+
+<h3>Hello CSS</h3>
+
+<p>Սա աշխատում է միայն :target pseudo-class-ով։</p>
+
+<br>
+
+<a href="#">Փակել</a>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>:valid / :invalid</h2>
+
+<input class="email" type="email" placeholder="Email">
+
+</section>
+
+<section>
+
+<h2>Domino Effect</h2>
+
+<div class="domino">
+
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>:first-child / :last-child</h2>
+
+<ul class="demo">
+
+<li>Առաջին</li>
+<li>Երկրորդ</li>
+<li>Երրորդ</li>
+<li>Չորրորդ</li>
+<li>Վերջին</li>
+
+</ul>
+
+</section>
+
+</body>
+</html>
