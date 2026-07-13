@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+<meta charset="UTF-8">
+<title>Opacity Example</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#222;
+}
+
+.card{
+    width:350px;
+    height:220px;
+    position:relative;
+    overflow:hidden;
+    border-radius:15px;
+    opacity:0.4;
+    transition:0.5s;
+}
+
+.card:hover{
+    opacity:1;
+    transform:scale(1.05);
+}
+
+.card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.info{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.6);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    font-weight:bold;
+
+    opacity:0;
+    transition:0.5s;
+}
+
+.card:hover .info{
+    opacity:1;
+}
+</style>
+
+</head>
+<body>
+
+<div class="card">
+    <img src="https://picsum.photos/350/220" alt="">
+    <div class="info">
+        Հայաստանը
+    </div>
+</div>
+
+</body>
+</html>
