@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Dropdown</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:grid;
+    place-items:center;
+    background:linear-gradient(135deg,#1b2735,#090a0f);
+}
+
+nav{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(12px);
+    padding:15px 40px;
+    border-radius:15px;
+    border:1px solid rgba(255,255,255,.15);
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+nav li{
+    position:relative;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    display:block;
+    padding:10px 0;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#00eaff;
+}
+
+/* Dropdown */
+
+.menu{
+    position:absolute;
+    top:140%;
+    left:0;
+    width:240px;
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+
+    border-radius:15px;
+    overflow:hidden;
+    list-style:none;
+
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(20px);
+
+    transition:.4s;
+}
+
+.menu li{
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.menu li:last-child{
+    border:none;
+}
+
+.menu a{
+    padding:15px 20px;
+    transition:.3s;
+}
+
+.menu a:hover{
+    background:rgba(0,234,255,.15);
+    padding-left:35px;
+}
+
+.dropdown:hover .menu{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+</style>
+
+</head>
+<body>
+
+<nav>
+
+<ul>
+
+<li><a href="#">🏠 Գլխավոր</a></li>
+
+<li class="dropdown">
+
+<a href="#">💻 Սարքեր ▾</a>
+
+<ul class="menu">
+
+<li><a href="#">📱 Հեռախոսներ</a></li>
+
+<li><a href="#">💻 Նոթբուքներ</a></li>
+
+<li><a href="#">⌚ Խելացի ժամացույցներ</a></li>
+
+<li><a href="#">🎧 Ականջակալներ</a></li>
+
+<li><a href="#">📷 Տեսախցիկներ</a></li>
+
+<li><a href="#">🖥️ Մոնիտորներ</a></li>
+
+</ul>
+
+</li>
+
+<li><a href="#">📞 Կապ</a></li>
+
+</ul>
+
+</nav>
+
+</body>
+</html>
