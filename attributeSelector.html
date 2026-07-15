@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+<meta charset="UTF-8">
+
+<style>
+
+body{
+    font-family:Arial;
+    padding:30px;
+}
+
+
+/* Բոլոր download կոճակները */
+a[data-download]{
+    display:inline-block;
+    padding:12px 20px;
+    background:#333;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+}
+
+
+/* PDF ֆայլերը */
+a[data-type="pdf"]{
+    background:red;
+}
+
+
+/* Նկարները */
+a[data-type="image"]{
+    background:green;
+}
+
+
+/* Բոլոր մեծ ֆայլերը */
+a[data-size="big"]{
+    border:3px solid gold;
+}
+
+
+/* Արտաքին կայքերի հղումներ */
+a[href^="https"]{
+    font-weight:bold;
+}
+
+
+/* Նոր էջ բացվողները */
+a[target="_blank"]{
+    text-decoration:underline;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+
+<h2>Ներբեռնումներ</h2>
+
+
+<a 
+href="book.pdf"
+data-download
+data-type="pdf"
+data-size="big">
+PDF գիրք
+</a>
+
+
+<br><br>
+
+
+<a 
+href="photo.jpg"
+data-download
+data-type="image"
+data-size="small">
+Նկար
+</a>
+
+
+<br><br>
+
+
+<a 
+href="https://github.com"
+target="_blank">
+GitHub
+</a>
+
+
+</body>
+</html>
