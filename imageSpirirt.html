@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+<meta charset="UTF-8">
+<title>CSS Sprite Image Example</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#eee;
+    padding:40px;
+}
+
+h2{
+    text-align:center;
+}
+
+/* sprite նկարի ընդհանուր դաշտ */
+.icon{
+    width:64px;
+    height:64px;
+    background-image:url("https://www.w3schools.com/css/img_navsprites.gif");
+    background-repeat:no-repeat;
+    display:inline-block;
+    margin:20px;
+}
+
+
+/* Home icon */
+.home{
+    background-position:0 0;
+}
+
+
+/* Search icon */
+.search{
+    background-position:-91px 0;
+}
+
+
+/* Mail icon */
+.mail{
+    background-position:-180px 0;
+}
+
+
+/* Print icon */
+.print{
+    background-position:-270px 0;
+}
+
+
+.box{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>CSS Image Sprite</h2>
+
+<div class="box">
+
+    <div class="icon home"></div>
+
+    <div class="icon search"></div>
+
+    <div class="icon mail"></div>
+
+    <div class="icon print"></div>
+
+</div>
+
+</body>
+</html>
