@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body{
+    font-family:Arial;
+    background:#f2f2f2;
+    padding:40px;
+}
+
+
+/* Counter ստեղծում */
+
+.steps{
+    counter-reset: step;
+    width:400px;
+    margin:auto;
+}
+
+
+.step{
+
+    background:white;
+    padding:20px 20px 20px 70px;
+    margin:20px 0;
+
+    border-radius:15px;
+
+    position:relative;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+}
+
+
+/* Թիվը ավտոմատ */
+
+.step::before{
+
+    counter-increment: step;
+
+    content: counter(step);
+
+    position:absolute;
+
+    left:20px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:35px;
+    height:35px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#667eea;
+    color:white;
+
+    font-size:18px;
+    font-weight:bold;
+
+}
+
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="steps">
+
+<div class="step">
+Ստեղծել HTML կառուցվածքը
+</div>
+
+
+<div class="step">
+Ավելացնել CSS ձևավորում
+</div>
+
+
+<div class="step">
+Միացնել JavaScript-ը
+</div>
+
+
+<div class="step">
+Տեղադրել կայքը
+</div>
+
+
+</div>
+
+
+</body>
+</html>
